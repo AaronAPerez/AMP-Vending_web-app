@@ -150,7 +150,7 @@ const WorkplaceBenefits = () => {
               <div key={index} className="bg-[#4d4d4d] rounded-lg shadow-lg border border-[#a4acac] p-6 overflow-visible">
                 <div className="relative">
                   {/* Quote mark decorative element */}
-                  <div className="absolute -top-8 -left-2 text-6xl text-[#FD5A1E] opacity-30 font-serif">"</div>
+                  <div className="absolute -top-8 -left-2 text-6xl text-[#FD5A1E] opacity-30 font-serif">&quot;</div>
                   
                   <blockquote className="relative z-10">
                     <p className="text-[#F5F5F5] italic mb-4 pl-4">{testimonial.quote}</p>

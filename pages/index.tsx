@@ -1,4 +1,3 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import HeroParallax from "@/components/hero/HeroParallax";
 import WorkplaceBenefits from "@/components/sections/WorkplaceBenefits";
 
