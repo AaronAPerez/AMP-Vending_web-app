@@ -4,6 +4,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import AMPVendingLogo from '../AMPVendingLogo';
 
 
 const Navbar = () => {
@@ -56,15 +57,8 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2" aria-label="AMP Vending - Home">
-              <div className="relative w-10 h-10 rounded-full bg-gradient-to-tr from-[#A5ACAF] to-[#F5F5F5] flex items-center justify-center overflow-hidden">
-                <span className="absolute inset-0 bg-gradient-to-br from-[#FD5A1E]/80 to-[#FD5A1E]/0 opacity-30"></span>
-                <span className="text-black font-bold text-xl relative z-10">A</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#F5F5F5] font-bold text-lg leading-none">AMP</span>
-                <span className="text-[#A5ACAF] text-xs leading-none">Vending Solutions</span>
-              </div>
-            </Link>
+          <AMPVendingLogo variant="horizontal" size="lg" />
+        </Link>
   
             {/* Desktop menu */}
             <nav className="hidden md:flex items-center space-x-1">
@@ -91,9 +85,9 @@ const Navbar = () => {
               <Link
                 href="/contact"
                 className="ml-4 bg-[#FD5A1E] hover:bg-[#FD5A1E]/90 text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(253,90,30,0.3)] hover:shadow-[0_0_20px_rgba(253,90,30,0.5)]"
-                aria-label="Get a quote for vending machine services"
+                aria-label="Get Started for vending machine services"
               >
-                Get a Quote
+                Get Started
               </Link>
             </nav>
   
@@ -166,7 +160,7 @@ const Navbar = () => {
               className="block mt-4 bg-[#FD5A1E] hover:bg-[#FD5A1E]/90 text-white px-4 py-3 rounded-lg text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Get a Quote
+              Get Started
             </Link>
           </div>
         </div>
