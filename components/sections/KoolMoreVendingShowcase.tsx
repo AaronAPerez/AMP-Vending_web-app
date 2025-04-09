@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -83,7 +83,7 @@ const KoolMoreVendingShowcase = () => {
   ];
 
   // Key features with icons, descriptions and details
-  const features = [
+  const features = useMemo(() => [
     {
       id: 'touchscreen',
       title: '21.5" HD Touchscreen',
@@ -188,8 +188,10 @@ const KoolMoreVendingShowcase = () => {
         'Cashbox protection with separate secure access',
         'Optional security camera integration for monitoring'
       ]
-    }
-  ];
+    },
+    // ... other feature objects
+  ], []); // Empty dependency array since features don't depend on any state or props
+
 
   // Benefit cards data
   const benefits = [
@@ -281,21 +283,19 @@ const KoolMoreVendingShowcase = () => {
 
   // Auto-rotate through features
   useEffect(() => {
-    if (!isFullscreen) { // Don't auto-rotate when in fullscreen mode
-      const interval = setInterval(() => {
-        setActiveFeature(current => {
-          const currentIndex = features.findIndex(f => f.id === current);
-          const nextIndex = (currentIndex + 1) % features.length;
-          
-          // Update active image to match feature
-          setActiveImageIndex(features[nextIndex].imageIndex || 0);
-          
-          return features[nextIndex].id;
-        });
-      }, 6000);
-      return () => clearInterval(interval);
+    if (!isFullscreen) {
+      const timer = setTimeout(() => {
+        // Find the index of the current active feature
+        const currentIndex = features.findIndex(f => f.id === activeFeature);
+        // Move to the next feature, or back to the first if at the end
+        const nextIndex = (currentIndex + 1) % features.length;
+        setActiveFeature(features[nextIndex].id);
+        setActiveImageIndex(features[nextIndex].imageIndex || 0);
+      }, 8000);
+
+      return () => clearTimeout(timer);
     }
-  }, [features, isFullscreen]);
+  }, [activeFeature, features, isFullscreen]);
 
   // Handle feature selection
   const handleFeatureSelect = (featureId: string) => {
@@ -717,7 +717,7 @@ const KoolMoreVendingShowcase = () => {
             <div>
               <p className="text-[#A5ACAF] mb-4">
                 Our revenue-sharing model provides you with 5% of gross sales without any upfront investment 
-                or maintenance responsibilities. Here's what you can expect:
+                or maintenance responsibilities. Here&quot;s what you can expect:
               </p>
               <ul className="space-y-3 text-[#A5ACAF]">
                 <li className="flex items-start">

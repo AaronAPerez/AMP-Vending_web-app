@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -223,8 +223,6 @@ const ProductSection = () => {
     ? products 
     : products.filter(product => product.category === selectedCategory);
   
-  // Get featured products for the hero section
-  const featuredProducts = products.filter(product => product.featured);
   
   // Animation with scroll
   const { scrollYProgress } = useScroll({
@@ -237,10 +235,7 @@ const ProductSection = () => {
   const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const y3 = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const y4 = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
-  
-  // Scale and opacity transforms for animation
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.6]);
+
   
   // State for hovered product
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
@@ -488,32 +483,6 @@ const ProductSection = () => {
 };
 
 // Helper function to get random position for floating products
-const getRandomPosition = (index: number, total: number) => {
-  // Calculate positions in a somewhat organized grid
-  // to avoid extreme overlapping while still appearing random
-  const columns = 4;
-  const rows = Math.ceil(total / columns);
-  
-  const col = index % columns;
-  const row = Math.floor(index / columns);
-  
-  // Base position in grid
-  const baseX = `${(col * 100) / (columns - 1)}%`;
-  const baseY = `${(row * 100) / (rows - 1)}%`;
-  
-  // Add some randomness to the positions
-  const xOffset = (Math.random() * 20 - 10) + '%';
-  const yOffset = (Math.random() * 20 - 10) + '%';
-  
-  // Random rotation between -15 and 15 degrees
-  const rotate = Math.random() * 30 - 15;
-  
-  return {
-    x: `calc(${baseX} + ${xOffset})`,
-    y: `calc(${baseY} + ${yOffset})`,
-    rotate
-  };
-};
 
 // Helper function to get human-readable category name
 const getCategoryName = (categoryId: string): string => {

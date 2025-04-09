@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { JSX, useState } from 'react';
 
 /**
@@ -205,7 +206,7 @@ const VendingMachineOptions = (): JSX.Element => {
                     >
                       <div className="aspect-w-4 aspect-h-3 mb-4 bg-[#4d4d4d] rounded-md overflow-hidden">
                         {machine.imageUrl && machine.imageUrl.startsWith('http') ? (
-                          <img 
+                          <Image
                             src={machine.imageUrl} 
                             alt={machine.name}
                             className="w-full h-full object-contain" 
@@ -272,7 +273,7 @@ const VendingMachineOptions = (): JSX.Element => {
               <div className="bg-[#000000] p-4 rounded-lg border border-[#a4acac]">
                 <div className="aspect-w-4 aspect-h-3 bg-[#4d4d4d] rounded-md overflow-hidden">
                   {selectedMachine.imageUrl && selectedMachine.imageUrl.startsWith('http') ? (
-                    <img 
+                    <Image
                       src={selectedMachine.imageUrl} 
                       alt={selectedMachine.name}
                       className="w-full h-full object-contain" 

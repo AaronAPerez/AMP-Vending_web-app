@@ -229,7 +229,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-[#4d4d4d] border border-[#a4acac] rounded-xl p-6 shadow-lg relative">
-                <div className="absolute top-6 left-6 text-6xl text-[#FD5A1E]/20 -z-0">"</div>
+                <div className="absolute top-6 left-6 text-6xl text-[#FD5A1E]/20 -z-0">&quot;</div>
                 <div className="relative z-10 pt-8">
                   <p className="text-[#F5F5F5] mb-6">{testimonial.quote}</p>
                   <div className="border-t border-[#a4acac] pt-4">
@@ -275,7 +275,7 @@ export default function Home() {
             <div className="bg-[#4d4d4d] border border-[#a4acac] rounded-xl p-6 relative">
               <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-[#FD5A1E] text-[#F5F5F5] font-bold flex items-center justify-center">2</div>
               <h3 className="text-xl font-bold text-[#F5F5F5] mt-2 mb-3">Site Assessment</h3>
-              <p className="text-[#A5ACAF]">We'll visit your location to identify the optimal placement for your machines.</p>
+              <p className="text-[#A5ACAF]">We&quot;ll visit your location to identify the optimal placement for your machines.</p>
             </div>
             
             <div className="bg-[#4d4d4d] border border-[#a4acac] rounded-xl p-6 relative">
@@ -332,7 +332,7 @@ export default function Home() {
             
             <div className="bg-[#4d4d4d] border border-[#a4acac] rounded-xl p-6">
               <h3 className="text-xl font-bold text-[#F5F5F5] mb-3">Can we request specific products?</h3>
-              <p className="text-[#A5ACAF]">Yes! We customize the product selection based on your employees' preferences and can adjust offerings based on feedback.</p>
+              <p className="text-[#A5ACAF]">Yes! We customize the product selection based on your employees&quot; preferences and can adjust offerings based on feedback.</p>
             </div>
           </div>
           
