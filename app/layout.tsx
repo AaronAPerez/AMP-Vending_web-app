@@ -4,6 +4,8 @@ import "./globals.css";
 import AuthProvider from "@/components/auth/AuthProvider";
 import Navbar from "@/components/layout/Navbar";
 import { Analytics } from "@vercel/analytics/react"
+import Footer from "@/components/layout/Footer";
+import DevelopmentAuthProvider from "@/components/auth/DevelopmentAuthProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* Wrap the app with AuthProvider */}
-        <AuthProvider>
+        <DevelopmentAuthProvider>
           {/* Skip to main content link for accessibility */}
           <a href="#main"
             className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-emerald-600 focus:text-white"
@@ -46,8 +48,8 @@ export default function RootLayout({
           <main className="min-h-screen pt-16" id="main">
             {children}
           </main>
-          {/* <Footer/> */}
-        </AuthProvider>
+          <Footer/> *
+        </DevelopmentAuthProvider>
   <Analytics/>
       </body>
     </html>

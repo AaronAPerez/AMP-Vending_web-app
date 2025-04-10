@@ -3,16 +3,14 @@
 import React, { ReactNode, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Header from '@/components/layout/Header';
+import AdminHeader from './AdminHeader';
+
 
 
 interface AdminLayoutProps {
   children: ReactNode;
 }
 
-/**
- * Layout component for admin pages with sidebar navigation
- */
 const AdminLayout = ({ children }: AdminLayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
@@ -77,9 +75,9 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Header />
+      <AdminHeader title={''} userName={''}/> 
       
-      <div className="flex">
+      <div className="flex-1">
         {/* Sidebar for larger screens */}
         <aside className="hidden md:flex md:flex-col md:w-64 md:fixed md:inset-y-0 md:pt-20 bg-white border-r border-gray-200">
           <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">

@@ -247,7 +247,7 @@ const ProductSection = () => {
       aria-labelledby="product-parallax-title"
     >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
+      {/* <div className="absolute inset-0 opacity-5 pointer-events-none">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
             <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -256,7 +256,7 @@ const ProductSection = () => {
           </defs>
           <rect width="100%" height="100%" fill="url(#grid-pattern)" />
         </svg>
-      </div>
+      </div> */}
       
       {/* Hero Section */}
       {/* <motion.div 
@@ -341,7 +341,7 @@ const ProductSection = () => {
       {/* Products Section */}
       <section 
         id="products" 
-        className="py-16 container mx-auto px-4 sm:px-6 lg:px-8"
+        className="pb-24 container mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F5] mb-4">
