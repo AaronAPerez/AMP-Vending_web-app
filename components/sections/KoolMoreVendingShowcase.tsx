@@ -557,6 +557,7 @@ const KoolMoreVendingShowcase = () => {
             <div className="space-y-3 overflow-y-auto flex-grow">
               {features.map((feature) => (
                 <div key={feature.id} className="transition-all duration-300">
+                  
                   <button
                     className={`w-full text-left p-4 rounded-lg transition-all ${
                       activeFeature === feature.id 
@@ -628,7 +629,7 @@ const KoolMoreVendingShowcase = () => {
             </div>
             
             {/* Call to action buttons */}
-            <div className="mt-8 space-y-3">
+            {/* <div className="mt-8 space-y-3">
               <Link 
                 href="/contact"
                 className="block w-full bg-[#FD5A1E] hover:bg-[#FD5A1E]/90 text-[#F5F5F5] py-3 px-6 rounded-lg font-medium text-center shadow-lg transition-colors"
@@ -641,11 +642,11 @@ const KoolMoreVendingShowcase = () => {
               >
                 View Proposal
               </Link>
-            </div>
+            </div> */}
           </div>
-        </div>
+        </div> 
         
-        {/* Available Products Section */}
+        {/* Available Products Section
         <div className="mt-20">
           <h3 className="text-2xl font-bold text-[#F5F5F5] mb-8 text-center">
             Available Products
@@ -685,10 +686,10 @@ const KoolMoreVendingShowcase = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </div> */}
         
         {/* Benefits section */}
-        <div className="mt-20 mb-16">
+        {/* <div className="mt-20 mb-16">
           <h2 className="text-3xl font-bold text-center text-[#F5F5F5] mb-10">
             Business Benefits
           </h2>
@@ -706,10 +707,10 @@ const KoolMoreVendingShowcase = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
         
         {/* Revenue calculator */}
-        <div className="bg-[#000000] border border-[#a4acac] rounded-xl p-8 mb-16">
+        {/* <div className="bg-[#000000] border border-[#a4acac] rounded-xl p-8 mb-16">
           <h2 className="text-2xl font-bold text-[#F5F5F5] text-center mb-6">
             Revenue Potential
           </h2>
@@ -775,10 +776,10 @@ const KoolMoreVendingShowcase = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         
         {/* Call to Action */}
-        <div className="mt-20 bg-gradient-to-r from-[#000000] to-[#4d4d4d] rounded-xl shadow-xl text-[#F5F5F5] overflow-hidden border border-[#a4acac]">
+        {/* <div className="mt-20 bg-gradient-to-r from-[#000000] to-[#4d4d4d] rounded-xl shadow-xl text-[#F5F5F5] overflow-hidden border border-[#a4acac]">
           <div className="md:flex">
             <div className="md:w-2/3 p-8 md:p-12">
               <h3 className="text-2xl font-bold mb-4">Transform Your Workplace Experience</h3>
@@ -810,7 +811,7 @@ const KoolMoreVendingShowcase = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Fullscreen image view */}
