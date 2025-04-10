@@ -2,12 +2,10 @@ import React from 'react';
 import HeroParallax from '@/components/hero/HeroParallax';
 import WorkplaceBenefits from '@/components/sections/WorkplaceBenefits';
 import ContactForm from '@/components/sections/ContactForm';
-import KoolMoreVendingShowcase from '@/components/sections/KoolMoreVendingShowcase';
+import ProductSection from '@/components/sections/ProductSection';
 import Link from 'next/link';
-import ValueProposition from '@/components/sections/ValueProposition';
-import VendingSolution from '@/components/vending/VendingSolution';
-import dynamic from 'next/dynamic';
-import LoadingComponent from '@/components/ui/LoadingComponent';
+import KoolMoreVendingShowcase from '@/components/sections/KoolMoreVendingShowcase';
+import VendingMachineOptions from '@/components/vending/VendingMachineOptions';
 
 
 
@@ -31,8 +29,6 @@ interface PageParams {
 // }
 
 export default function Home() {
-
-
   // Business value points used in multiple sections
   const businessValues = [
     {
@@ -85,22 +81,6 @@ export default function Home() {
     }
   ];
 
-// Dynamic imports for below-the-fold components
-const RevenueVisualization = dynamic(
-  () => import('@/components/sections/RevenueVisualization'),
-  { ssr: true, loading: () => <LoadingComponent /> }
-);
-
-const FinancialProposition = dynamic(
-  () => import('@/components/sections/FinancialProposition'),
-  { ssr: true, loading: () => <LoadingComponent /> }
-);
-
-const VendingMachineDisplay = dynamic(
-  () => import('@/components//vending/VendingMachineDisplay'),
-  { ssr: true, loading: () => <LoadingComponent />, }
-);
-
   return (
     <div className="overflow-hidden">
       {/* Hero Section with semi-transparent background */}
@@ -113,50 +93,9 @@ const VendingMachineDisplay = dynamic(
       {/* Transition element */}
       <div className="h-32 bg-gradient-to-b from-transparent to-[#000000] -mt-32 relative z-20"></div>
 
-     {/* Value Proposition Section with integrated transition gradient */}
-     <ValueProposition />
-
-{/* Vending Machine Solution Section */}
-<VendingSolution />
-
-{/* Revenue Visualization Section */}
-<RevenueVisualization />
-
-{/* Financial Proposition Section */}
-<FinancialProposition />
-
-{/* Featured Vending Machine Display */}
-<VendingMachineDisplay />
-
-{/* Call to Action Section */}
-<section className="py-16 bg-[#000000]">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F5] mb-6">
-      Ready to Transform Your Workplace?
-    </h2>
-    <p className="text-xl text-[#A5ACAF] mb-8 max-w-2xl mx-auto">
-      Join our growing network of satisfied clients and start generating passive income with our premium vending solutions today.
-    </p>
-    <div className="flex flex-wrap justify-center gap-4">
-      <Link 
-        href="/contact" 
-        className="bg-[#FD5A1E] hover:bg-[#FD5A1E]/90 text-[#F5F5F5] px-8 py-3 rounded-lg font-medium shadow-lg transition-colors"
-      >
-        Request a Quote
-      </Link>
-      <Link 
-        href="/proposal"
-        className="bg-transparent border border-[#A5ACAF] hover:bg-[#4d4d4d] text-[#F5F5F5] px-8 py-3 rounded-lg font-medium transition-colors"
-      >
-        View Full Proposal
-      </Link>
-    </div>
-  </div>
-</section>
-
       {/* Value Proposition - Clear and immediate benefits */}
-      {/* <section id="value-proposition" className="py-16 bg-[#000000] relative z-25"> */}
-        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="value-proposition" className="py-16 bg-[#000000] relative z-25">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F5] mb-4">
               Transform Your Workplace at <span className="text-[#FD5A1E]">Zero Cost</span>
@@ -179,10 +118,10 @@ const VendingMachineDisplay = dynamic(
                 <p className="text-[#A5ACAF]">{value.description}</p>
               </div>
             ))}
-          </div> */}
+          </div>
           
           {/* Call to Action Button */}
-          {/* <div className="text-center mt-10">
+          <div className="text-center mt-10">
             <Link
               href="/proposal"
               className="px-6 py-3 bg-[#FD5A1E] text-[#F5F5F5] font-medium rounded-lg shadow-lg hover:bg-[#FD5A1E]/90 transition-colors inline-flex items-center"
@@ -193,25 +132,22 @@ const VendingMachineDisplay = dynamic(
               </svg>
             </Link>
           </div>
-        </div> */}
-      {/* </section> */}
+        </div>
+      </section>
 
       {/* Benefits Section - Detailed workplace advantages */}
-      {/* <section id="benefits" className="relative z-25 bg-gradient-to-b from-[#000000] to-[#4d4d4d]/20">
+      <section id="benefits" className="relative z-25 bg-gradient-to-b from-[#000000] to-[#4d4d4d]/20">
         <WorkplaceBenefits />
-      </section> */}
+      </section>
 
       {/* Featured Vending Machine - Show what they're getting */}
-      {/* <section id="vending-machine-display">
+      <section id="vending-machine-display">
         <KoolMoreVendingShowcase />
-      </section> */}
-
-      {/* <VendingMachineGallery/> */}
+      </section>
       
       {/* Revenue Calculator - Simple visualization of financial benefit */}
-      {/* <section id="revenue-visualization" className="py-16 bg-[#000000]">
-        <RevenueVisualization/> */}
-        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="revenue-visualization" className="py-16 bg-[#000000]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F5] mb-4">
               Your Passive Income Potential
@@ -297,11 +233,11 @@ const VendingMachineDisplay = dynamic(
               </div>
             </div>
           </div>
-      //   </div> 
-      // </section>
+        </div>
+      </section>
 
       {/* Testimonials - Social proof */}
-      {/* <section id="testimonials" className="py-16 bg-gradient-to-b from-[#000000] to-[#4d4d4d]/20">
+      <section id="testimonials" className="py-16 bg-gradient-to-b from-[#000000] to-[#4d4d4d]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F5] mb-4">
@@ -327,17 +263,17 @@ const VendingMachineDisplay = dynamic(
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Machine Options - Multiple solutions for different needs */}
-      {/* <section id="vending-machine-options">
+      <section id="vending-machine-options">
         <VendingMachineOptions />
-      </section> */}
+      </section>
 
       {/* Product Showcase - What's available in the machines */}
-      {/* <section id="product-section">
+      <section id="product-section">
         <ProductSection />
-      </section> */}
+      </section>
 
       {/* Process Overview - How it works */}
       <section id="process-overview" className="py-16 bg-[#000000]">
