@@ -1,5 +1,4 @@
 import HeroParallax from "@/components/hero/HeroParallax";
-import Navbar from "@/components/layout/Navbar";
 import KoolMoreVendingShowcase from "@/components/sections/KoolMoreVendingShowcase";
 import ProductSection from "@/components/sections/ProductSection";
 import WorkplaceBenefits from "@/components/sections/WorkplaceBenefits";
