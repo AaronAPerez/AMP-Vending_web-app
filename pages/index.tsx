@@ -1,7 +1,7 @@
 import HeroParallax from "@/components/hero/HeroParallax";
+import Navbar from "@/components/layout/Navbar";
 import KoolMoreVendingShowcase from "@/components/sections/KoolMoreVendingShowcase";
 import ProductSection from "@/components/sections/ProductSection";
-import VendingMachineOptions from "@/components/sections/VendingMachineOptions";
 import WorkplaceBenefits from "@/components/sections/WorkplaceBenefits";
 import Link from "next/link";
 
@@ -61,6 +61,8 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden">
+
+  
       {/* Hero Section with semi-transparent background */}
       <section id="hero" className="relative min-h-screen bg-black/50">
         {/* Background overlay */}
@@ -244,9 +246,9 @@ export default function Home() {
       </section>
 
       {/* Machine Options - Multiple solutions for different needs */}
-      <section id="vending-machine-options">
+      {/* <section id="vending-machine-options">
         <VendingMachineOptions />
-      </section>
+      </section> */}
 
       {/* Product Showcase - What's available in the machines */}
       <section id="product-section">

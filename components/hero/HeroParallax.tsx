@@ -11,11 +11,7 @@ interface ProductItem {
   category: string;
 }
 
-/**
- * Enhanced HeroParallax component serving as main hero section
- * Features scrolling background images of vending machine products
- * Implements Raiders-inspired color scheme for accessibility
- */
+
 const HeroParallax = () => {
   // Ref for the scrolling container
   const containerRef = useRef<HTMLDivElement>(null);
@@ -101,9 +97,9 @@ const HeroParallax = () => {
   // the component will use placeholder images until you add the real ones
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20 pb-40" ref={containerRef}>
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden" ref={containerRef}>
       {/* Background overlay */}
-      <div className="absolute inset-0 bg-[#000000]/60 z-10" aria-hidden="true"></div>
+      <div className="absolute inset-0 bg-[#000000]/20 z-10" aria-hidden="true"></div>
       
       {/* Products grid with parallax effect */}
       <div className="absolute inset-0 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 p-4 z-0">
@@ -115,7 +111,7 @@ const HeroParallax = () => {
           return (
             <div 
               key={index}
-              className="relative aspect-[3/4] rounded-lg overflow-hidden"
+              className="relative aspect-[3/4]fullrounded-fulloverflow-hidden"
               style={{ 
                 transform: `translateY(${offset}px)`,
                 transition: 'transform 0.3s ease-out',
@@ -169,14 +165,14 @@ const HeroParallax = () => {
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/proposal"
-            className="px-8 py-4 bg-[#FD5A1E] text-[#F5F5F5] font-medium rounded-lg shadow-lg hover:bg-[#F5F5F5] hover:text-[#000000] transition-colors"
+            className="px-8 py-4 bg-[#FD5A1E] text-[#F5F5F5] font-medium rounded-full shadow-lg hover:bg-[#F5F5F5] hover:text-[#000000] transition-colors"
             aria-label="View our vending machine proposal"
           >
             View Proposal
           </Link>
           <Link
             href="/contact"
-            className="px-8 py-4 border-2 border-[#F5F5F5] text-[#F5F5F5] font-medium rounded-lg hover:bg-[#FD5A1E] hover:border-[#FD5A1E] transition-colors"
+            className="px-8 py-4 border-2 border-[#F5F5F5] text-[#F5F5F5] font-medium rounded-full hover:bg-[#FD5A1E] hover:border-[#FD5A1E] transition-colors"
             aria-label="Contact us about vending machines"
           >
             Contact Us

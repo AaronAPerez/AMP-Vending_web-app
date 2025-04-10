@@ -48,8 +48,8 @@ const Navbar = () => {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled 
-            ? 'py-2 bg-black/90 backdrop-blur-md shadow-lg' 
-            : 'py-4 bg-black/70 backdrop-blur-sm'
+            ? 'bg-black/90 backdrop-blur-md shadow-lg' 
+            : 'bg-black/70 backdrop-blur-sm'
         }`}
         aria-label="Main navigation"
       >
